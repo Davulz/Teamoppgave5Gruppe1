@@ -24,7 +24,6 @@ function show(inst) {
   `;
 
     let buttons = document.getElementById('buttons')
-    let select = document.querySelector('.instrument-select')
     if (inst == "piano") {
         if (buttons.classList.contains('trommer')) {
             buttons.classList.remove('trommer')
@@ -50,7 +49,7 @@ function show(inst) {
 
         for (let i = 0; i < ActiveSound.length; i++) {
             let first = i % 4 == 0 ? 'first' : ''; // % Modulus || in computing, the modulo operation returns the remainder or signed remainder of a division, after one number is divided by another (called the modulus of the operation).
-            buttons.innerHTML += `<div onclick="playSound('${i}')" class="tromme ${first}">${TrommeNavn[i]}</div>`;
+            buttons.innerHTML += `<button onclick="playSound('${i}')" class="tromme ${first}">${TrommeNavn[i]}</button>`;
 
         }
 
@@ -65,25 +64,39 @@ window.addEventListener('keydown', function(e) {
             if (ActiveSound == Piano) {
                 ActiveSound = Piano2
 
-                if (Taster.includes(e.key.toLowerCase())) {
-                    playSound(Taster.indexOf(e.key.toLowerCase()))
-                }
+                // if (Taster.includes(e.key.toLowerCase())) {
+                //     let buttons = document.querySelector('.buttons').children
+                //     console.log(buttons)
+                //     buttons[Taster.indexOf(e.key.toLowerCase)].active();
+                //     playSound(Taster.indexOf(e.key.toLowerCase()))
+                // }
+
+                // <button></button>  button.click()S
             }
         }
+
         if (Taster.includes(e.key.toLowerCase())) {
             playSound(Taster.indexOf(e.key.toLowerCase()))
+            let buttons = document.getElementById('buttons').children
+            buttons[Taster.indexOf(e.key.toLowerCase())].focus();
+
         }
     }
 
     if (instrument == "launchpad") {
         if (TrommeTaster.includes(e.key.toLowerCase())) {
             playSound(TrommeTaster.indexOf(e.key.toLowerCase()))
+            let buttons = document.getElementById('buttons').children
+            console.log(buttons[TrommeTaster.indexOf(e.key.toLowerCase())])
+            buttons[TrommeTaster.indexOf(e.key.toLowerCase())].focus();
+
         }
     }
 
 })
 
 window.addEventListener('keyup', function(e) {
+    document.activeElement.blur()
     if (instrument == 'piano') {
         if (e.key == "Shift") {
             if (ActiveSound == Piano2) {
@@ -98,6 +111,7 @@ window.addEventListener('keyup', function(e) {
 function playSound(gittIndex) {
     let sound = new Audio(`mp3Notes/${ActiveSound[gittIndex]}`) //<audio src=""></audio> https://stackoverflow.com/questions/9419263/how-to-play-audio
     sound.play()
+    document.activeElement.blur();
 }
 
 function changeInstrument(inst) {
