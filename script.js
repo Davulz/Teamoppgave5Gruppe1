@@ -1,11 +1,22 @@
 //Modell
-const Piano = ['c3.mp3', 'c-3.mp3', 'd3.mp3', 'd-3.mp3', 'e3.mp3', 'f3.mp3', 'f-3.mp3', 'g3.mp3', 'g-3.mp3', 'a4.mp3', 'a-4.mp3', 'b4.mp3', 'c4.mp3']
-const Piano2 = ['c4.mp3', 'c-4.mp3', 'd4.mp3', 'd-4.mp3', 'e4.mp3', 'f4.mp3', 'f-4.mp3', 'g4.mp3', 'g-4.mp3', 'a5.mp3', 'a-5.mp3', 'b5.mp3', 'c5.mp3']
-const Tromme = ['cymbal1.wav', 'cymbal2.wav', 'cymbal3.wav', 'cymbal4.wav', 'cymbal5.wav', 'cymbal6.wav', 'cymbal7.wav', 'cymbal8.wav', 'kick1.wav', 'kick2.wav', 'snare1.wav', 'snare2.wav', 'tom1.wav', 'tom2.wav', 'tom3.wav', 'tom4.wav', ]
-const TrommeNavn = ['Cymbal1', 'Cymbal2', 'Cymbal3', 'Cymbal4', 'Cymbal5', 'Cymbal6', 'Cymbal7', 'Cymbal8', 'Kick1', 'Kick2', 'Snare1', 'Snare2', 'Tom1', 'Tom2', 'Tom3', 'Tom4', ]
+const Piano = ['c3.mp3', 'c-3.mp3', 'd3.mp3', 'd-3.mp3', 'e3.mp3', 'f3.mp3',
+    'f-3.mp3', 'g3.mp3', 'g-3.mp3', 'a4.mp3', 'a-4.mp3', 'b4.mp3', 'c4.mp3'
+]
+const Piano2 = ['c4.mp3', 'c-4.mp3', 'd4.mp3', 'd-4.mp3', 'e4.mp3', 'f4.mp3',
+    'f-4.mp3', 'g4.mp3', 'g-4.mp3', 'a5.mp3', 'a-5.mp3', 'b5.mp3', 'c5.mp3'
+]
+const Tromme = ['cymbal1.wav', 'cymbal2.wav', 'cymbal3.wav', 'cymbal4.wav',
+    'cymbal5.wav', 'cymbal6.wav', 'cymbal7.wav', 'cymbal8.wav', 'kick1.wav',
+    'kick2.wav', 'snare1.wav', 'snare2.wav', 'tom1.wav', 'tom2.wav', 'tom3.wav', 'tom4.wav',
+]
+const TrommeNavn = ['Cymbal1', 'Cymbal2', 'Cymbal3', 'Cymbal4', 'Cymbal5', 'Cymbal6', 'Cymbal7', 'Cymbal8',
+    'Kick1', 'Kick2', 'Snare1', 'Snare2', 'Tom1', 'Tom2', 'Tom3', 'Tom4',
+]
 const PianoNavn = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C']
+
 const Taster = ['a', 'w', 's', 'e', 'd', 'f', 't', 'g', 'y', 'h', 'u', 'j', 'k']
 const TrommeTaster = ['1', '2', '3', '4', 'q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 'z', 'x', 'c', 'v'];
+
 let ActiveSound = Piano;
 let instrument = 'piano'
 
@@ -29,7 +40,7 @@ function show(inst) {
             buttons.classList.remove('trommer')
         }
         buttons.classList.add('ramme')
-            //Går igjennom ActiveSound arrayen og for hver string legger til en button i HTMl buttons.
+            //Går igjennom ActiveSound arrayen og for hver string legger til en button i HTML buttons.
         for (let i = 0; i < ActiveSound.length; i++) {
             const name = PianoNavn[i];
             const button = Piano[i];
@@ -63,15 +74,6 @@ window.addEventListener('keydown', function(e) {
         if (e.shiftKey) {
             if (ActiveSound == Piano) {
                 ActiveSound = Piano2
-
-                // if (Taster.includes(e.key.toLowerCase())) {
-                //     let buttons = document.querySelector('.buttons').children
-                //     console.log(buttons)
-                //     buttons[Taster.indexOf(e.key.toLowerCase)].active();
-                //     playSound(Taster.indexOf(e.key.toLowerCase()))
-                // }
-
-                // <button></button>  button.click()S
             }
         }
 

@@ -8,21 +8,33 @@ body {
     z-index: -6;
     background-color: rgb(34, 34, 34);
     overflow: hidden;
-    /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png); */
-    /* align-items: center; */
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: url('studio.jpg');
+    background-size: 100%;
+    background-position: left 1000px;
+    filter: blur(5px);
 }
 
 .ramme {
     height: 18.900em;
     width: 35em;
-    /* margin: 5em auto; */
     padding-left: 8.3rem;
     position: relative;
     top: 20em;
     border: 1px solid #160801;
     border-radius: 1em;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5);
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png);
+    background-color: rgba(0, 0, 0, 0.700);
+    box-shadow: 10px 10px rgba(103, 87, 248, 0.178);
 }
 
 .tangent {
@@ -31,7 +43,6 @@ body {
     justify-content: center;
     position: relative;
     user-select: none;
-    /* line-height: 29em; */
     height: 16em;
     width: 4em;
     top: 5em;
@@ -62,7 +73,6 @@ body {
 }
 
 .black {
-    /* line-height: 17em; */
     position: absolute;
     top: 5em;
     color: white;
@@ -74,18 +84,13 @@ body {
     box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0, -5px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
-
 .black:active {
     background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, #1a1a1a 100%);
-    /* box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -2px 2px 3px rgba(255, 255, 255, 0.6) inset, 0 1px 2px rgba(255, 255, 255, 0.5); */
     box-shadow: 2px 0 3px rgba(255, 255, 255, 0.2) inset, -5px 5px 20px rgba(255, 255, 255, 0.2) inset, 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .black:focus {
     background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, #1a1a1a 100%);
-    /* box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -2px 2px 3px rgba(255, 255, 255, 0.6) inset, 0 1px 2px rgba(255, 255, 255, 0.5); */
     box-shadow: 2px 0 3px rgba(255, 255, 255, 0.2) inset, -5px 5px 20px rgba(255, 255, 255, 0.2) inset, 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
@@ -97,7 +102,7 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    background: url('drum-kit.jpg');
+    background: url('studio.jpg');
     background-size: 100%;
     background-position: left 1000px;
     filter: blur(5px);
@@ -183,6 +188,3 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-
-
-/* line-height: 29em; */
